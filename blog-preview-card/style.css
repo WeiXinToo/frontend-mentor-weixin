@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Roboto:wght@400;500;700&family=Varela+Round&family=Work+Sans:wght@400;600;700&display=swap');
+
+/*|| CSS RESET*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*|| ROOT ELEMENT - RESET FONT to 10px*/
+
+html {
+  font-size: 62.5%;
+}
+
+/*|| VARIABLE*/
+
+:root {
+  /*COLORS*/
+  --BGCOLOR: hsl(47, 88%, 63%);
+  --COLOR1: hsl(0, 0%, 100%);
+  --COLOR2: hsl(0, 0%, 50%);
+  --COLOR3: hsl(0, 0%, 7%);
+
+  /*TYPOGRAPHY*/
+  --FS:1.4rem;
+
+  /*Box Model*/
+  --PADDING-MAIN:1.2em;
+  --PADDING-TEXT:0.5em 1em;
+  --BORDER:calc(var(--FS) * 0.1) solid var(--COLOR3); 
+  --BORDER-RADIUS:calc(var(--FS)*1);
+  --BORDER-RADIUS-TEXT:calc(var(--FS)*0.5);
+  --BORDER-SHADOW:calc(var(--FS)*0.5) calc(var(--FS)*0.5) var(--COLOR3);
+  
+  /*Transition*/
+  --SMALL-TRANSLATION:-1px, -1px;
+  --TRANSITION-DURATION:0.5s;
+}
+
+/*|| GENERAL*/
+
+body {
+  /*Set full height of body element*/
+  height: 100dvh;
+  position: relative;
+  background-color: var(--BGCOLOR);
+
+  font-family: 'Figtree', sans-serif;
+  font-size: var(--FS);
+}
+
+main {
+  
+  /*Center vertically*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /*Center Horizontally*/
+  padding: var(--PADDING-MAIN);
+  width: 85%;
+  max-width: 370px;
+  height: 80dvh;
+  
+
+  background-color: var(--COLOR1);
+  border: var(--BORDER);
+  /* border-radius: var(--BORDER-RADIUS); */
+
+  /*Display*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  /*Deal with Overflow Texts*/
+  overflow: hidden;
+
+  transition: box-shadow var(--TRANSITION-DURATION);
+}
+
+p {
+  transition: transform var(--TRANSITION-DURATION);
+}
+
+/*|| SPECIFICS*/
+
+.illustration {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--BORDER-RADIUS);
+
+  transition: transform var(--TRANSITION-DURATION), opacity var(--TRANSITION-DURATION);
+}
+
+.yellow-tag {
+  background-color: var(--BGCOLOR);
+  padding: var(--PADDING-TEXT);
+  font-weight: 800;
+  border-radius: var(--BORDER-RADIUS-TEXT);
+  transition: background-color var(--TRANSITION-DURATION), color var(--TRANSITION-DURATION);
+}
+
+.title {
+  font-size: calc(var(--FS)*1.48);
+  font-weight: 800;
+}
+
+.text {
+  color: var(--COLOR2);
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+
+}
+
+.avatar-picture {
+  max-width: 25%;
+  height: auto;
+  transition: transform var(--TRANSITION-DURATION);
+  
+}
+
+.avatar-name {
+  padding: var(--PADDING-TEXT);
+  font-weight: 800;
+}
+
+/*|| STATES*/
+main:hover {
+  box-shadow:var(--BORDER-SHADOW);
+}
+
+.illustration:hover {
+  transform: translate(var(--SMALL-TRANSLATION));
+  opacity: 0.75;
+
+}
+
+p:hover {
+  transform: translate(var(--SMALL-TRANSLATION));
+}
+
+.yellow-tag:hover {
+
+  background-color: var(--COLOR3);
+  color: var(--COLOR1);
+}
+
+.avatar-picture:hover {
+  transform: scale(1.1);
+}
+
+::selection {
+  background-color: var(--BGCOLOR);
+}
