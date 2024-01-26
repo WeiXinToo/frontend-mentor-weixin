@@ -160,3 +160,19 @@ p:hover {
 ::selection {
   background-color: var(--BGCOLOR);
 }
+
+@media screen and (orientation:landscape) {
+
+  :root {
+  /*TYPOGRAPHY*/
+  --FS:0.8rem;
+  }
+
+  main {
+    display: flex;
+    width: 80%;
+    max-width: 300px;
+    min-height: 300px;
+    overflow: scroll;
+  }
+}
